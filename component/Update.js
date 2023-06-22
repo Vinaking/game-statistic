@@ -57,8 +57,6 @@ const UpdateScreen = ({ navigation, route }) => {
         }).then(() => alert('Complete')).catch((error) => (alert(error)));
     }
 
-
-
     return (
         <SafeAreaView style={styles.container}>
             <View style={[styles.choseContainer, {paddingStart: 20}]}>

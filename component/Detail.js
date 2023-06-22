@@ -34,8 +34,11 @@ const DetailScreen = ({ navigation, route }) => {
 
             let id = route.params.id
             if (typeof groups[id] !== 'undefined') { 
-                console.log(groups[id])
-                setMatchs(groups[id])
+                let sorted = groups[id].sort((match1, match2) => {
+                    return match2.data.match - match1.data.match
+                })
+                console.log(sorted) 
+                setMatchs(sorted)
             }
         })
     }

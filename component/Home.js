@@ -1,9 +1,4 @@
 import { FlatList, StyleSheet, View, Text, TouchableHighlight, Button, Image, TouchableOpacity } from "react-native";
-import DetailScreen from './Detail';
-import UpdateScreen from './Update';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from "react";
 import { User, UserRank } from "./UserModel";
 import { child, ref, set, onValue } from "firebase/database";
@@ -81,18 +76,18 @@ const HomeScreen = ({ navigation }) => {
         });
     }
 
-    useEffect(() => {
-        navigation.setOptions({
-            headerRight: () => (
-                <TouchableOpacity
-                    onPress={() => { navigation.navigate('Update') }}>
-                    <Image
-                        style={{ width: 30, height: 30 }}
-                        source={require('../assets/plus.png')} />
-                </TouchableOpacity>
-            )
-        })
-    }, [navigation]);
+    // useEffect(() => {
+    //     navigation.setOptions({
+    //         headerRight: () => (
+    //             <TouchableOpacity
+    //                 onPress={() => { navigation.navigate('Update') }}>
+    //                 <Image
+    //                     style={{ width: 30, height: 30 }}
+    //                     source={require('../assets/plus.png')} />
+    //             </TouchableOpacity>
+    //         )
+    //     })
+    // }, [navigation]);
 
     useEffect(() => {
         getAllUserRanksFromDB()
